@@ -1,7 +1,9 @@
 # Funtoo Stage3 Vagrant box
 
-This is a minimal stage3 snapshot of Funtoo Linux that is packaged into a Vagrant box file. Currently only a VirtualBox version is provided.
-
+This is a minimal stage3 snapshot of Funtoo Linux that is packaged into a Vagrant box file. Currently, only a VirtualBox version is provided.
+The repository has been forked from https://github.com/foobarlab/funtoo-stage3-packer so full credit must be given as foobarlab has done the
+majority of the work here. My purpose is to customize the box to my own needs and use it as a clean environment for funtoo development.
+However, most customizations in that regard will be factored out into a separate ansible stage, so the box should still be useful to others.
 ### What's included?
 
  - Latest Funtoo 1.4 stage3 tarball from [https://build.funtoo.org/1.4-release-std/x86-64bit/intel64-nehalem/stage3-latest.tar.xz](https://build.funtoo.org/1.4-release-std/x86-64bit/intel64-nehalem/stage3-latest.tar.xz) using [SystemRescueCD](http://www.system-rescue-cd.org)
@@ -22,6 +24,7 @@ This is a minimal stage3 snapshot of Funtoo Linux that is packaged into a Vagran
 ### Download pre-build images
 
 Get the latest build from Vagrant Cloud: [foobarlab/funtoo-stage3](https://app.vagrantup.com/foobarlab/boxes/funtoo-stage3)
+Link for this fork will be added soon!
 
 ### Build your own using Packer
 
