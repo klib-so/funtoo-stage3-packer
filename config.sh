@@ -25,7 +25,7 @@ export BUILD_KEEP_MAX_CLOUD_BOXES=2        # set the maximum number of boxes to 
 #export BUILD_RELEASE_VERSION_ID="2021-05-04"	# FIXME release file sometimes missing information (workaround: copy manually from https://www.funtoo.org/Intel64-nehalem, todo: determine from stage3 file date if not present in /etc/os-release)
 
 # enable custom overlay?
-export BUILD_CUSTOM_OVERLAY=true
+export BUILD_CUSTOM_OVERLAY=false
 export BUILD_CUSTOM_OVERLAY_NAME="currenthost-overlay"
 export BUILD_CUSTOM_OVERLAY_BRANCH="stage3"
 export BUILD_CUSTOM_OVERLAY_URL="https://code.funtoo.org/bitbucket/scm/~klib.so/currenthost-overlay.git"
@@ -45,13 +45,15 @@ export BUILD_SYSTEMRESCUECD_REMOTE_HASH="0a55c61bf24edd04ce44cdf5c3736f739349652
 
 export BUILD_TIMESTAMP="$(date --iso-8601=seconds)"
 
+###  Klib.so
+# Hardcoding some values here to stop machine freeze.
 # detect number of system cpus available (always select maximum for best performance)
-export BUILD_CPUS=`nproc --all`
-
+#export BUILD_CPUS=`nproc --all`
+export BUILD_CPUS=3
 let "jobs = $BUILD_CPUS + 1"       # calculate number of jobs (threads + 1)
 export BUILD_MAKEOPTS="-j${jobs}"
 let "memory = $BUILD_CPUS * 2048"  # recommended 2GB for each cpu
-export BUILD_MEMORY="${memory}"
+export BUILD_MEMORY=4096 #"${memory}"
 
 export BUILD_BOX_VERSION=`echo $BUILD_BOX_FUNTOO_VERSION | sed -e 's/\.//g'`
 
