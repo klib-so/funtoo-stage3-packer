@@ -5,7 +5,7 @@ command -v nproc >/dev/null 2>&1 || { echo "Command 'nproc' from coreutils requi
 
 export BUILD_BOX_NAME="funtoo-stage3"
 export BUILD_BOX_FUNTOO_VERSION="1.4"
-export BUILD_BOX_SOURCES="https://github.com/foobarlab/funtoo-stage3-packer"
+export BUILD_BOX_SOURCES="https://github.com/klib-so/funtoo-stage3-packer"
 
 export BUILD_GUEST_TYPE="Gentoo_64"
 export BUILD_GUEST_DISKSIZE="50000"    # dynamic disksize in MB, e.g. 50000 => 50 GB
@@ -19,21 +19,21 @@ export BUILD_BOX_USERNAME="foobarlab"
 
 export BUILD_REBUILD_SYSTEM=false          # set to 'true': rebuild @system (e.g. required for toolchain rebuild)
 
-export BUILD_GUEST_ADDITIONS=true          # set to 'true': install virtualbox guest additions
-export BUILD_KEEP_MAX_CLOUD_BOXES=1        # set the maximum number of boxes to keep in Vagrant Cloud
+export BUILD_GUEST_ADDITIONS=false          # set to 'true': install virtualbox guest additions
+export BUILD_KEEP_MAX_CLOUD_BOXES=2        # set the maximum number of boxes to keep in Vagrant Cloud
 
 #export BUILD_RELEASE_VERSION_ID="2021-05-04"	# FIXME release file sometimes missing information (workaround: copy manually from https://www.funtoo.org/Intel64-nehalem, todo: determine from stage3 file date if not present in /etc/os-release)
 
 # enable custom overlay?
 export BUILD_CUSTOM_OVERLAY=true
-export BUILD_CUSTOM_OVERLAY_NAME="foobarlab-stage3"
+export BUILD_CUSTOM_OVERLAY_NAME="currenthost-overlay"
 export BUILD_CUSTOM_OVERLAY_BRANCH="stage3"
-export BUILD_CUSTOM_OVERLAY_URL="https://github.com/foobarlab/foobarlab-overlay.git"
+export BUILD_CUSTOM_OVERLAY_URL="https://code.funtoo.org/bitbucket/scm/~klib.so/currenthost-overlay.git"
 
 # ----------------------------! do not edit below this line !----------------------------
 
 export BUILD_STAGE3_FILE="stage3-latest.tar.xz"
-export BUILD_FUNTOO_ARCHITECTURE="x86-64bit/intel64-nehalem"
+export BUILD_FUNTOO_ARCHITECTURE="x86-64bit/generic_64"
 export BUILD_FUNTOO_DOWNLOADPATH="https://build.funtoo.org/1.4-release-std/$BUILD_FUNTOO_ARCHITECTURE"
 
 export BUILD_OUTPUT_FILE="$BUILD_BOX_NAME.box"
