@@ -75,7 +75,9 @@ fi
 
 . config.sh
 
-BUILD_HASH_URL="${BUILD_FUNTOO_DOWNLOADPATH}/${BUILD_RELEASE_VERSION_ID}/stage3-intel64-nehalem-${BUILD_BOX_FUNTOO_VERSION}-release-std-${BUILD_RELEASE_VERSION_ID}.tar.xz.hash.txt"
+# This wasn't forming correctly. Hardcoding for now
+#BUILD_HASH_URL="${BUILD_FUNTOO_DOWNLOADPATH}/${BUILD_RELEASE_VERSION_ID}/stage3-intel64-nehalem-${BUILD_BOX_FUNTOO_VERSION}-release-std-${BUILD_RELEASE_VERSION_ID}.tar.xz.hash.txt"
+BUILD_HASH_URL="https://build.funtoo.org/1.4-release-std/x86-64bit/generic_64/2021-05-05/stage3-generic_64-1.4-release-std-2021-05-05.tar.xz.hash.txt"
 BUILD_HASH_FILE="${BUILD_STAGE3_FILE}.hash.txt"
 
 if [ -f "$BUILD_HASH_FILE" ]; then

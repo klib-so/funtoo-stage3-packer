@@ -65,7 +65,7 @@ rc-update add acpid default
 emerge -v sys-apps/usermode-utilities net-misc/bridge-utils
 
 # add up-to-date intel cpu microcode
-emerge -vt sys-firmware/intel-microcode sys-apps/iucode_tool
+#emerge -vt sys-firmware/intel-microcode sys-apps/iucode_tool
 
 # perl-cleaner
 perl-cleaner --all
@@ -90,12 +90,12 @@ fi
 
 # cleanup and finish any installation which had temporary USE flag set
 chroot /mnt/funtoo /bin/bash -uex <<'EOF'
-emerge -vt --update --newuse --deep --with-bdeps=y @world
-emerge --depclean
+##emerge -vt --update --newuse --deep --with-bdeps=y @world
+#emerge --depclean
 EOF
 
 # perform @preserved-rebuild, rebuild reverse dependencies
 chroot /mnt/funtoo /bin/bash -uex <<'EOF'
-emerge -v @preserved-rebuild
-revdep-rebuild
+#emerge -v @preserved-rebuild
+#revdep-rebuild
 EOF
