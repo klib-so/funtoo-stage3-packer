@@ -25,9 +25,9 @@ export BUILD_KEEP_MAX_CLOUD_BOXES=2        # set the maximum number of boxes to 
 #export BUILD_RELEASE_VERSION_ID="2021-05-04"	# FIXME release file sometimes missing information (workaround: copy manually from https://www.funtoo.org/Intel64-nehalem, todo: determine from stage3 file date if not present in /etc/os-release)
 
 # enable custom overlay?
-export BUILD_CUSTOM_OVERLAY=false
+export BUILD_CUSTOM_OVERLAY=true
 export BUILD_CUSTOM_OVERLAY_NAME="currenthost-overlay"
-export BUILD_CUSTOM_OVERLAY_BRANCH="stage3"
+export BUILD_CUSTOM_OVERLAY_BRANCH="master"
 export BUILD_CUSTOM_OVERLAY_URL="https://code.funtoo.org/bitbucket/scm/~klib.so/currenthost-overlay.git"
 
 # ----------------------------! do not edit below this line !----------------------------
