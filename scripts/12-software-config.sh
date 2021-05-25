@@ -90,7 +90,7 @@ fi
 
 # cleanup and finish any installation which had temporary USE flag set
 chroot /mnt/funtoo /bin/bash -uex <<'EOF'
-#emerge -vt --update --newuse --deep --with-bdeps=y @world
+##emerge -vt --update --newuse --deep --with-bdeps=y @world
 #emerge --depclean
 EOF
 
